@@ -1,6 +1,7 @@
-# 云图库 · 第一版
+# 云图库 · Cloud Gallery
 
-独立的 Vue 3 + TypeScript + FastAPI 图片管理项目。已实现真实登录、公开图库、私有空间、图片上传/查看/编辑/删除、缩略图、名称与标签搜索、分页及存储配额。没有接入付费 API。
+基于 Vue 3、TypeScript 和 FastAPI 的图片管理系统，
+支持公开图库与私有空间，适合个人部署和全栈项目学习。
 
 详细技术栈、数据模型、API 与上传流程见 [项目框架说明](docs/project-framework.md)，本次自检修复见 [自检报告](docs/self-check.md)。
 
