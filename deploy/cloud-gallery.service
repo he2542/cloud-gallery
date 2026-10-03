@@ -1,0 +1,25 @@
+[Unit]
+Description=Cloud Gallery API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=cloud-gallery
+Group=cloud-gallery
+WorkingDirectory=/opt/cloud-gallery/backend
+EnvironmentFile=/etc/cloud-gallery.env
+ExecStart=/opt/cloud-gallery/backend/.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8200 --workers 1 --limit-concurrency 16
+Restart=on-failure
+RestartSec=5
+UMask=0077
+MemoryMax=768M
+CPUQuota=100%
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/cloud-gallery
+
+[Install]
+WantedBy=multi-user.target
+
